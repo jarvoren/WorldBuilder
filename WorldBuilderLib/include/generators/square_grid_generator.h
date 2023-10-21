@@ -5,4 +5,9 @@
  * if the globe variable is off.
  */
 
+#include <grid_elements/tile.h>
+
+Tile*** GenerateTileset(uint32_t x_size, uint32_t y_size);
+
+
 #endif // H_SQUARE_GRID_GENERATOR_H

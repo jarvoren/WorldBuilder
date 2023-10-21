@@ -1,7 +1,5 @@
 # WorldBuilder
 
-A Ue5 world procedural generator
+A liblary for generating game worlds
 
 For any licencing/contributing/usage rights email jarvoren@gmail.com
-
-Developed with Unreal Engine 5

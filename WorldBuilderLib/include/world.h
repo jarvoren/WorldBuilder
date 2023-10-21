@@ -3,31 +3,58 @@
 
 #include <stdio.h>
 #include <cstdint>
+#include <cstring>
+#include <grid_elements/tile.h>
+#include <generators/square_grid_generator.h>
 
-class WorldDescriptor
+void test_lib();
+
+enum TilesetType
+{
+	SQUARE,
+	HEXAGONAL,
+	FREE_DRAW, /* In far future the generation of enviroments with unusual borders may be added */
+	TRIANGLE /* Probably never gonna see that comeing */
+};
+
+/* Config used to generate world 
+ * if possible refrain from using pointers to anything as whole config will be copied
+ * use identifiers that will use pointers later
+ * Example: We want tilesets to be configurable. Maybe create existing characters. However
+ * those would have to be created outside of config and either config needs to be its own
+ * class with destructor to handle it or You need to be smart about how to handle it ;)
+ * TO REMEMBER/TO DO
+ */
+struct WorldConfig
+{
+	/* Overworld grid size */
+	uint32_t grid_x_size;
+	uint32_t grid_y_size;
+
+	/* Overworld grid type */
+	TilesetType tile_type;
+};
+
+class World
 {
 public:
-	WorldDescriptor();
-	~WorldDescriptor();
+	World();
+	World(WorldConfig* cfg);
+	~World();
+	void DestroyWorld(Tile*** tileset);
 
+	/* Grid coordinates */
+	WorldConfig world_config;
+	/* De facto map saved in 2d array
+	 * allocated by the generator
+	 */
+	Tile*** tileset;
 private:
-	bool isSquareGrid;
-	uint32_t gridHeight;
-	uint32_t gridLength;
-	Tile
+
+	
 
 };
 
-WorldDescriptor::WorldDescriptor()
-{
-	isSquareGrid = true;
-	gridHeight = 0;
-	gridLength = 0;
-}
 
-WorldDescriptor::~WorldDescriptor()
-{
-}
-void test_lib();
 
 #endif // H_WORLD_H

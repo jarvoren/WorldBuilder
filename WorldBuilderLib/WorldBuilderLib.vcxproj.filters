@@ -21,12 +21,18 @@
     <ClCompile Include="src\generators\square_grid_generator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\grid_elements\tile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\world.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\generators\square_grid_generator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\grid_elements\tile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
