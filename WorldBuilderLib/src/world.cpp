@@ -1,11 +1,5 @@
 #include <world.h>
 
-void test_lib()
-{
-	printf("goo");
-}
-
-
 void World::DestroyWorld(Tile*** tileset)
 {
 	/* Free the tileset */
@@ -23,8 +17,9 @@ void World::DestroyWorld(Tile*** tileset)
 
 World::World(WorldConfig* cfg)
 {
+	/* Copy the config to the world object */
 	std::memcpy(&world_config, cfg, sizeof(WorldConfig));
-	tileset = GenerateTileset(world_config.grid_x_size, world_config.grid_y_size);
+	tileset = GenerateTestTileset(world_config.grid_x_size, world_config.grid_y_size);
 }
 
 

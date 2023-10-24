@@ -7,8 +7,6 @@
 #include <grid_elements/tile.h>
 #include <generators/square_grid_generator.h>
 
-void test_lib();
-
 enum TilesetType
 {
 	SQUARE,
@@ -33,6 +31,11 @@ struct WorldConfig
 
 	/* Overworld grid type */
 	TilesetType tile_type;
+
+	/* Indicates if the generated world should encompass a globe or
+	 * relativley flat surface. (important for generator adjecency )
+	 */
+	bool is_globe;
 };
 
 class World
