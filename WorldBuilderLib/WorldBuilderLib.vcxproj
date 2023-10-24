@@ -158,6 +158,7 @@
     <ClCompile Include="src\grid_elements\tile.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\generators\generator.h" />
     <ClInclude Include="include\generators\square_grid_generator.h" />
     <ClInclude Include="include\world.h" />
     <ClInclude Include="include\grid_elements\tile.h" />
