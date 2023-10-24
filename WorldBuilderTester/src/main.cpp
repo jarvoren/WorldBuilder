@@ -31,9 +31,7 @@ int main()
 			if (j + 1 == myworld->world_config.grid_y_size) printf("\n");
 		}
 	}
-	/* Test liblary linking */
-	printf("grey ");
-	test_lib();
+
 	getchar();
 	return 0;
 }
