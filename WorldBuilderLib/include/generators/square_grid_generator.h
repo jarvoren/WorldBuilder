@@ -6,9 +6,15 @@
  */
 
 #include <grid_elements/tile.h>
+#include <generators/generator.h>
 
-Tile*** GenerateTestTileset(uint32_t x_size, uint32_t y_size);
-Tile*** GenerateBasicTileset(uint32_t x_size, uint32_t y_size);
+class SquareGridGenerator : public Generator
+{
+public:
+	Tile*** GenerateTestTileset(uint32_t x_size, uint32_t y_size);
+	Tile*** GenerateBasicTileset(uint32_t x_size, uint32_t y_size);
+};
+
 
 
 #endif // H_SQUARE_GRID_GENERATOR_H
