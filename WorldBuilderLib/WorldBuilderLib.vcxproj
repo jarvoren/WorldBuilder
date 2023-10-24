@@ -153,6 +153,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\generators\generator.cpp" />
     <ClCompile Include="src\generators\square_grid_generator.cpp" />
     <ClCompile Include="src\world.cpp" />
     <ClCompile Include="src\grid_elements\tile.cpp" />
