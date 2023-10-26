@@ -8,24 +8,7 @@
 
 #include <cstdint>
 #include <cstdlib>
-
-/* May be needed to have a tile work on overworld and all other levels of detail */
-enum TileLevel
-{
-	OVERWORLD,
-	PLACE,
-	SPECIFIC_PLACE,
-	MINIATURE
-};
-
-/* Temporary enum representing tile type - in future change to configurable one */
-
-enum TileType
-{
-	WATER,
-	LANDMASS,
-	MOUNTAIN
-};
+#include <configs/enums.h>
 
 class Tile
 {

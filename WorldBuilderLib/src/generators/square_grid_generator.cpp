@@ -1,5 +1,10 @@
 #include <generators/square_grid_generator.h>
 
+SquareGridGenerator::SquareGridGenerator(WorldConfig* cfg)
+{
+	world_cfg_ptr = cfg;
+}
+
 Tile*** SquareGridGenerator::GenerateTestTileset(uint32_t x_size, uint32_t y_size)
 {
 	int se = 8000;
@@ -40,4 +45,9 @@ Tile*** SquareGridGenerator::GenerateBasicTileset(uint32_t x_size, uint32_t y_si
 		}
 	}
 	return generated_tileset;
+}
+
+Tile*** SquareGridGenerator::GenerateBasicTileset()
+{
+	return NULL;
 }

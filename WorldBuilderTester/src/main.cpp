@@ -5,7 +5,7 @@ int main()
 	WorldConfig* new_cfg = new WorldConfig();
 	new_cfg->grid_x_size = 60;
 	new_cfg->grid_y_size = 60;
-	new_cfg->tile_type = SQUARE;
+	new_cfg->tileset_configuration = SQUARE;
 
 	World* myworld = new World(new_cfg);
 

@@ -2,16 +2,14 @@
 #define H_GRID_GENERATOR_H
 
 #include <grid_elements/tile.h>
-
-struct GeneratorConfig
-{
-
-};
+#include <configs/configs_agregator.h>
 
 class Generator
 {
 public:
-	virtual Tile*** GenerateBasicTileset(GeneratorConfig cfg) = 0;
+	virtual Tile*** GenerateBasicTileset() = 0;
+	virtual Tile*** GenerateTestTileset(uint32_t x_size, uint32_t y_size) = 0;
+	WorldConfig* world_cfg_ptr;
 };
 
-#endif // H_SQUARE_GRID_GENERATOR_H
+#endif // H_GRID_GENERATOR_H

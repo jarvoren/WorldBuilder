@@ -153,12 +153,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\factories\generator_factory.cpp" />
     <ClCompile Include="src\generators\generator.cpp" />
     <ClCompile Include="src\generators\square_grid_generator.cpp" />
     <ClCompile Include="src\world.cpp" />
     <ClCompile Include="src\grid_elements\tile.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\configs\configs_agregator.h" />
+    <ClInclude Include="include\configs\defines.h" />
+    <ClInclude Include="include\configs\enums.h" />
+    <ClInclude Include="include\factories\generator_factory.h" />
     <ClInclude Include="include\generators\generator.h" />
     <ClInclude Include="include\generators\square_grid_generator.h" />
     <ClInclude Include="include\world.h" />
