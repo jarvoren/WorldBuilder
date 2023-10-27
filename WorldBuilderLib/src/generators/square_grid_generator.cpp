@@ -49,5 +49,12 @@ Tile*** SquareGridGenerator::GenerateBasicTileset(uint32_t x_size, uint32_t y_si
 
 Tile*** SquareGridGenerator::GenerateBasicTileset()
 {
+	 /*
+		1) Generate the tectonic plates.
+			*need to design best way to create plates
+		2)Populate plates with basic tiles
+		3)Assign tectonic movments
+		4)Assign Tile heights based on movments of plates
+	 */
 	return NULL;
 }

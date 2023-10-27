@@ -28,4 +28,21 @@ enum TilesetType
 	TRIANGLE /* Probably never gonna see that comeing */
 };
 
+/* Planet type de facto overwolrld overall theme. Used by generator in tileset creation */
+enum WorldTerrainType
+{
+	Carbon,
+	Coreless,
+	Desert,
+	Dwarf,
+	Eggshell,
+	Hycean,
+	Ice,
+	Iron,
+	Lava,
+	Ocean,
+	Earth,
+	Island
+};
+
 #endif // H_ENUMS_H

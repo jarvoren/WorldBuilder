@@ -20,10 +20,11 @@ public:
 	 * allocated by the generator
 	 */
 	Tile*** tileset;
-private:
 
-	
+	WorldTerrainType planet_type;
 
+	/* Gravity mulltiplier relative to earth gravity */
+	int gravity;
 };
 
 

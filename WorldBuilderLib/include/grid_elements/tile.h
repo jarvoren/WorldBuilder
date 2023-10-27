@@ -9,6 +9,7 @@
 #include <cstdint>
 #include <cstdlib>
 #include <configs/enums.h>
+#include <map>
 
 class Tile
 {
@@ -23,7 +24,16 @@ public:
 	TileLevel level;
 	TileType type;
 
-private:
+	/* Tile average altitude */
+	int altitude;
+
+	/* Tile temerature data */
+	int temerature_avg;
+	int temerature_lowest;
+	int temerature_highest;
+
+	/* Decides if a tile type is more or less likley to show up near this one in generation time */
+	std::map<TileType, int> tile_relations;
 
 };
 
