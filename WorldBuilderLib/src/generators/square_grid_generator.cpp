@@ -49,6 +49,14 @@ Tile*** SquareGridGenerator::GenerateBasicTileset(uint32_t x_size, uint32_t y_si
 
 Tile*** SquareGridGenerator::GenerateBasicTileset()
 {
+
+	//NOTE TO SELF
+	//GENERATOR MUST BE AWARE OF THE SCALE IT OPERATES IN - plates will work only if we know how far away from the plate
+	//boundary the creation events take precedence. So first step is to calculate the size of the tile in relation to planet size.
+
+	//NOTE TO SELF
+	// does bigger planet mean bigger plates? Is size of plate relative that is main question. Probably with no answer since we know not
+	// of other planets with similar tectonics
 	 /*
 		1) Generate the tectonic plates.
 			*need to design best way to create plates
