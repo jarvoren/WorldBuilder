@@ -32,6 +32,9 @@ public:
 	int temerature_lowest;
 	int temerature_highest;
 
+	/* Earth movments probability */
+	uint32_t earth_move_event_probability;
+
 	/* Decides if a tile type is more or less likley to show up near this one in generation time */
 	std::map<TileType, int> tile_relations;
 

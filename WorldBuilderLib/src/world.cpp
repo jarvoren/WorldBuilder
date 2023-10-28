@@ -41,6 +41,8 @@ World::World()
 {
 	world_config = { 0 };
 	tileset = NULL;
+	planet_type = EARTH;
+	gravity = 1;
 }
 
 World::~World()
