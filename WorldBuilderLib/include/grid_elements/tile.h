@@ -10,6 +10,7 @@
 #include <cstdlib>
 #include <configs/enums.h>
 #include <map>
+#include <generators/tectonics/tectonic_plate.h>
 
 class Tile
 {
@@ -24,6 +25,10 @@ public:
 	TileLevel level;
 	TileType type;
 
+	/* Size in meters */
+	uint32_t x_border_size;
+	uint32_t y_border_size;
+
 	/* Tile average altitude */
 	int altitude;
 
@@ -37,6 +42,9 @@ public:
 
 	/* Decides if a tile type is more or less likley to show up near this one in generation time */
 	std::map<TileType, int> tile_relations;
+
+	/* Pointer to a tectonic plate */
+	TectonicPlate* plate;
 
 };
 

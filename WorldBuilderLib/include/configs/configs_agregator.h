@@ -28,6 +28,11 @@ struct WorldConfig
 	 * relativley flat surface. (important for generator adjecency )
 	 */
 	bool is_globe;
+
+	/* Tile size in m allows configuring tile size for
+	 * generator 
+	 */
+	uint32_t tile_size = 1000;
 };
 
 
