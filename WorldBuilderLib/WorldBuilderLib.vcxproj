@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -156,6 +156,7 @@
     <ClCompile Include="src\factories\generator_factory.cpp" />
     <ClCompile Include="src\generators\generator.cpp" />
     <ClCompile Include="src\generators\square_grid_generator.cpp" />
+    <ClCompile Include="src\generators\tectonics\tectonic_plate.cpp" />
     <ClCompile Include="src\world.cpp" />
     <ClCompile Include="src\grid_elements\tile.cpp" />
   </ItemGroup>
@@ -166,6 +167,7 @@
     <ClInclude Include="include\factories\generator_factory.h" />
     <ClInclude Include="include\generators\generator.h" />
     <ClInclude Include="include\generators\square_grid_generator.h" />
+    <ClInclude Include="include\generators\tectonics\tectonic_plate.h" />
     <ClInclude Include="include\world.h" />
     <ClInclude Include="include\grid_elements\tile.h" />
   </ItemGroup>

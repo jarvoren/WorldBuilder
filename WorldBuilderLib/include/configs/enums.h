@@ -31,18 +31,18 @@ enum TilesetType
 /* Planet type de facto overwolrld overall theme. Used by generator in tileset creation */
 enum WorldTerrainType
 {
-	Carbon,
-	Coreless,
-	Desert,
-	Dwarf,
-	Eggshell,
-	Hycean,
-	Ice,
-	Iron,
-	Lava,
-	Ocean,
-	Earth,
-	Island
+	CARBON,
+	CORELESS,
+	DESERT,
+	DWARF,
+	EGGSHELL,
+	HYCEAN,
+	ICE,
+	IRON,
+	LAVA,
+	OCEAN,
+	EARTH,
+	ISLAND
 };
 
 #endif // H_ENUMS_H

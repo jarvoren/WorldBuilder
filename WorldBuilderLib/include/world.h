@@ -25,6 +25,9 @@ public:
 
 	/* Gravity mulltiplier relative to earth gravity */
 	int gravity;
+
+	/* Globe merridian - for sake of simplicity it is just a circumference in meters */
+	uint32_t globe_circumference;
 };
 
 
