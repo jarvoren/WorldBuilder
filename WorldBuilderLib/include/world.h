@@ -21,8 +21,6 @@ public:
 	 */
 	Tile*** tileset;
 
-	WorldTerrainType planet_type;
-
 	/* Gravity mulltiplier relative to earth gravity */
 	int gravity;
 

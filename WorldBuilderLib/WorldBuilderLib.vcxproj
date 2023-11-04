@@ -153,6 +153,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\generators\planetary\sizes_generator.cpp" />
     <ClCompile Include="src\factories\generator_factory.cpp" />
     <ClCompile Include="src\generators\generator.cpp" />
     <ClCompile Include="src\generators\square_grid_generator.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="include\generators\tectonics\tectonic_plate.h" />
     <ClInclude Include="include\world.h" />
     <ClInclude Include="include\grid_elements\tile.h" />
+    <ClInclude Include="include\generators\planetary\sizes_generator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

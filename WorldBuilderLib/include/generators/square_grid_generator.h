@@ -6,12 +6,13 @@
  */
 
 #include <generators/generator.h>
+#include <generators/planetary/sizes_generator.h>
 
 class SquareGridGenerator : public Generator
 {
 public:
 	SquareGridGenerator(WorldConfig* cfg);
-	Tile*** GenerateBasicTileset() override;
+	Tile*** GeneratePlanetsTileset() override;
 	Tile*** GenerateTestTileset(uint32_t x_size, uint32_t y_size) override;
 	Tile*** GenerateBasicTileset(uint32_t x_size, uint32_t y_size);
 };
