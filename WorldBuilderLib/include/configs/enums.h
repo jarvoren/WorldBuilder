@@ -29,7 +29,7 @@ enum TilesetType
 };
 
 /* Planet type de facto overwolrld overall theme. Used by generator in tileset creation */
-enum WorldTerrainType
+enum WorldPlanetType
 {
 	CARBON,
 	CORELESS,

@@ -7,7 +7,7 @@
 class Generator
 {
 public:
-	virtual Tile*** GenerateBasicTileset() = 0;
+	virtual Tile*** GeneratePlanetsTileset() = 0;
 	virtual Tile*** GenerateTestTileset(uint32_t x_size, uint32_t y_size) = 0;
 	WorldConfig* world_cfg_ptr;
 };

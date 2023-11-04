@@ -17,7 +17,7 @@
 struct WorldConfig
 {
 	/* Tile types that are allowed in generator */
-	/* Overworld grid size */
+	/* Overworld grid size only divisible by 2 */
 	uint32_t grid_x_size;
 	uint32_t grid_y_size;
 
@@ -33,6 +33,10 @@ struct WorldConfig
 	 * generator 
 	 */
 	uint32_t tile_size = 1000;
+
+	/* Type of planet that will be generated */
+	WorldPlanetType planet_type;
+
 };
 
 

@@ -27,7 +27,7 @@ World::World(WorldConfig* cfg)
 	//tileset = tileset_generator->GenerateTestTileset(world_config.grid_x_size, world_config.grid_y_size);
 
 	//TODO Populate the tileset with proper tiles - terrain only generation
-	tileset = tileset_generator->GenerateBasicTileset();
+	tileset = tileset_generator->GeneratePlanetsTileset();
 
 	//TODO Generate populace, main characters and factions		**together** ??
 	//															**together** ??

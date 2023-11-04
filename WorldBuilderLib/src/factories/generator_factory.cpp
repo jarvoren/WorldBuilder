@@ -1,4 +1,5 @@
 #include <factories/generator_factory.h>
+#include <generators/square_grid_generator.h>
 
 Generator* GeneratorFactory(WorldConfig* cfg)
 {
