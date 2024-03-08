@@ -16,9 +16,11 @@
  */
 struct WorldConfig
 {
-	/* Tile types that are allowed in generator */
-	/* Overworld grid size only divisible by 2 */
+	/* Only values divisible by 2 for these sizes in valid config */
+
+	/* Horizontal squares count */
 	uint32_t grid_x_size;
+	/* Vertical squares count */
 	uint32_t grid_y_size;
 
 	/* Overworld grid type */

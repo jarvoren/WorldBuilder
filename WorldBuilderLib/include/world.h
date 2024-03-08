@@ -10,7 +10,7 @@ class World
 {
 public:
 	World();
-	World(WorldConfig* cfg);
+	ErrorCode Generate(WorldConfig* cfg);
 	~World();
 	void DestroyWorld(Tile*** tileset);
 

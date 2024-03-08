@@ -67,22 +67,33 @@ Tile*** SquareGridGenerator::GeneratePlanetsTileset()
 	int top_equator_id = world_cfg_ptr->grid_y_size / 2;
 	int equator_border_size = world_cfg_ptr->tile_size;
 
-	/* Bottom border of tile nearest to any pole */
-	double polemost_tile_bottom_border = equator_border_size / world_cfg_ptr->grid_x_size;
-
-	int planet_radius = GetPlanetRadius(world_cfg_ptr->planet_type);
+	int world_circumference = GetPlanetRadius(world_cfg_ptr->planet_type) * M_PI * 2;
+	/* strangly named variable which is actualy pole to pole length
+	 * so half of circumference (we are not doing elipsoid)
+	 * used by the c-squares
+	 */
+	int world_height = world_circumference / 2;
+	int universal_border_size = world_height / world_cfg_ptr->grid_y_size;
 
 	for (size_t i = 0; i < world_cfg_ptr->grid_x_size; i++)
 	{
 		for (size_t j = 0; j < world_cfg_ptr->grid_y_size; j++)
 		{
-			//BEFORE RETHINK THE TILE COUNT IN Y AND X DIRECTIONS MAYBE THIS SHOULD BE ALWAYS x count = y count 
 
-			// CHECK WHICH WAY WE GO TO OR FROM THE EQUATOR
-			// FIND THE RATIO FOR THE TOP OR BOTTOM BORDER
-			// ASIGN THE BORDER SIZE ACORDING TO THE RATIO
 			/* y border size is always the tile size and not affected by c-squares */
-			tileset[i][j]->x_border_size = equator_border_size
+			tileset[i][j]->y_border_size = universal_border_size;
+
+			if (j < top_equator_id)
+			{
+				tileset[i][j]->x_top_border_size = j / top_equator_id * universal_border_size;
+				tileset[i][j]->x_bottom_border_size = j + 1 / top_equator_id * universal_border_size;
+			}
+			else
+			{
+				int dividend = world_cfg_ptr->grid_y_size - j - 1;
+				tileset[i][j]->x_bottom_border_size = dividend / top_equator_id * universal_border_size;
+				tileset[i][j]->x_top_border_size = dividend + 1 / top_equator_id * universal_border_size;
+			}
 		}
 	}
 	//NOTE TO SELF
