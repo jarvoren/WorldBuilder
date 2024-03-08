@@ -25,8 +25,12 @@ public:
 	TileLevel level;
 	TileType type;
 
-	/* Size in meters */
-	uint32_t x_border_size;
+	/* Size in meters
+	 * top and bottom only used in specific case of c-squares
+	 * TODO move c-square to separate class inheriting Tile if more than one additional c-square var is made
+	 */
+	uint32_t x_top_border_size; //maybe union for clarity ?
+	uint32_t x_bottom_border_size;
 	uint32_t y_border_size;
 
 	/* Tile average altitude */

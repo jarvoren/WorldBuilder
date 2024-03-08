@@ -45,4 +45,9 @@ enum WorldPlanetType
 	ISLAND
 };
 
+enum ErrorCode
+{
+	ERR_ILLEGAL_CONFIG_DATA
+};
+
 #endif // H_ENUMS_H

@@ -7,7 +7,8 @@ int main()
 	new_cfg->grid_y_size = 60;
 	new_cfg->tileset_configuration = SQUARE;
 
-	World* myworld = new World(new_cfg);
+	World* myworld = new World();
+	myworld->Generate(new_cfg);
 
 	for (size_t i = 0; i < myworld->world_config.grid_x_size; i++)
 	{

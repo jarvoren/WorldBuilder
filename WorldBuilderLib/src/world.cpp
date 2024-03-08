@@ -15,8 +15,12 @@ void World::DestroyWorld(Tile*** tileset)
 	delete[] tileset;
 }
 
-World::World(WorldConfig* cfg)
+/* Config will be copied and can be disposed by caller afterwards */
+ErrorCode World::Generate(WorldConfig* cfg)
 {
+	if (IsValidConfig(cfg))
+		return ERR_ILLEGAL_CONFIG_DATA;
+
 	/* Copy the config to the world object */
 	std::memcpy(&world_config, cfg, sizeof(WorldConfig));
 	
@@ -47,4 +51,14 @@ World::World()
 
 World::~World()
 {
+}
+
+/* Returns true on valid config */
+bool IsValidConfig(WorldConfig* cfg)
+{
+	/* grid size must be divisible by 2 for generator */
+	if (cfg->grid_x_size % 2 || cfg->grid_y_size % 2)
+		return false;
+
+	return true;
 }

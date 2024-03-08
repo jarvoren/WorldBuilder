@@ -5,6 +5,7 @@
  * if the globe variable is off.
  */
 
+#include <math.h>
 #include <generators/generator.h>
 #include <generators/planetary/sizes_generator.h>
 
