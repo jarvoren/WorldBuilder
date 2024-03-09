@@ -14,6 +14,8 @@ public:
 	~World();
 	void DestroyWorld(Tile*** tileset);
 
+	WorldPlanetType planet_type;
+
 	/* Grid coordinates */
 	WorldConfig world_config;
 	/* De facto map saved in 2d array
@@ -28,6 +30,6 @@ public:
 	uint32_t globe_circumference;
 };
 
-
+bool IsValidConfig(WorldConfig* cfg);
 
 #endif // H_WORLD_H

@@ -1,17 +1,9 @@
 #include <generators/tectonics/tectonic_plate.h>
 
-class TectonicPlate
-{
-public:
-	TectonicPlate();
-	~TectonicPlate();
-
-private:
-
-};
-
 TectonicPlate::TectonicPlate()
 {
+	density = 0;
+	type = OCEANIC;
 }
 
 TectonicPlate::~TectonicPlate()
