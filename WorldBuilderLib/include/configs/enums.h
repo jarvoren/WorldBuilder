@@ -45,6 +45,19 @@ enum WorldPlanetType
 	ISLAND
 };
 
+enum NumpadDirections
+{
+	DOWNLEFT	= 1,
+	DOWN		= 2,
+	DOWNRIGHT	= 3,
+	LEFT		= 4,
+	NOONE		= 5,
+	RIGHT		= 6,
+	UPLEFT		= 7,
+	UP			= 8,
+	UPRIGHT		= 9
+};
+
 enum ErrorCode
 {
 	ERR_ILLEGAL_CONFIG_DATA

@@ -1,6 +1,8 @@
 #ifndef H_GRID_GENERATOR_H
 #define H_GRID_GENERATOR_H
 
+#define _USE_MATH_DEFINES
+#include <cmath>
 #include <grid_elements/tile.h>
 #include <configs/configs_agregator.h>
 

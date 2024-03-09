@@ -21,9 +21,11 @@ ErrorCode World::Generate(WorldConfig* cfg)
 	if (IsValidConfig(cfg))
 		return ERR_ILLEGAL_CONFIG_DATA;
 
+	srand(cfg->seed);
+
 	/* Copy the config to the world object */
 	std::memcpy(&world_config, cfg, sizeof(WorldConfig));
-	
+
 	//TODO Generate basic tileset
 	Generator* tileset_generator = GeneratorFactory(&world_config);
 

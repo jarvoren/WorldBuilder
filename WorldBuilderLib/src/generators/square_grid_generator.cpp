@@ -9,10 +9,10 @@ Tile*** SquareGridGenerator::GenerateTestTileset(uint32_t x_size, uint32_t y_siz
 {
 	int se = 8000;
 	/* Allocate the arrays for the tileset */
-	Tile*** generated_tileset = new Tile**[x_size];
+	Tile*** generated_tileset = new Tile * *[x_size];
 	for (size_t i = 0; i < x_size; i++)
 	{
-		generated_tileset[i] = new Tile*[y_size];
+		generated_tileset[i] = new Tile * [y_size];
 		for (size_t j = 0; j < y_size; j++)
 		{
 			generated_tileset[i][j] = NULL;
@@ -26,7 +26,7 @@ Tile*** SquareGridGenerator::GenerateTestTileset(uint32_t x_size, uint32_t y_siz
 		for (size_t j = 0; j < y_size; j++)
 		{
 			generated_tileset[i][j] = NULL;
-			generated_tileset[i][j] = new Tile(i, j, se++, generated_tileset, 60,60);
+			generated_tileset[i][j] = new Tile(i, j, se++, generated_tileset, 60, 60);
 		}
 	}
 
@@ -55,15 +55,7 @@ Tile*** SquareGridGenerator::GenerateBasicTileset(uint32_t x_size, uint32_t y_si
 Tile*** SquareGridGenerator::GeneratePlanetsTileset()
 {
 	Tile*** tileset = GenerateBasicTileset(world_cfg_ptr->grid_x_size, world_cfg_ptr->grid_y_size);
-	//NOTE TO SELF
-	//GENERATOR MUST BE AWARE OF THE SCALE IT OPERATES IN - plates will work only if we know how far away from the plate
-	//boundary the creation events take precedence. So first step is to calculate the size of the tile in relation to planet size.
-	//also the fact that c-square representation changes tile size depending 
 
-	
-	//############################################################
-	//HIGHEST in y axis SQUARE x size SHOULD BE the y border size divided by count of squares in the x grid!!!!!!!!!
-	//############################################################
 	int top_equator_id = world_cfg_ptr->grid_y_size / 2;
 	int equator_border_size = world_cfg_ptr->tile_size;
 
@@ -96,10 +88,10 @@ Tile*** SquareGridGenerator::GeneratePlanetsTileset()
 			}
 		}
 	}
-	//NOTE TO SELF
-	// does bigger planet mean bigger plates? Is size of plate relative that is main question. Probably with no answer since we know not
-	// of other planets with similar tectonics
-	 /*
+
+	struct TectonicPlateCount main_tectonic_plates_count = GetPlanetTectonicPlatesCount(world_cfg_ptr->planet_type);
+
+	/*
 		1) Generate the tectonic plates.
 			*need to design best way to create plates
 		2)Populate plates with basic tiles

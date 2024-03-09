@@ -2,6 +2,7 @@
 #define H_TECTONIC_PLATE_H
 
 #include <cstdint>
+#include <configs/enums.h>
 
 enum TectonicPlateType
 {
@@ -16,18 +17,14 @@ public:
 	TectonicPlate();
 	~TectonicPlate();
 
-	uint32_t density;
 	TectonicPlateType type;
+	NumpadDirections direction;
+
+	/* Plate density used for interaction calculations */
+	uint32_t density;
+	/* Maximum amout of tiles */
+	uint8_t max_size;
 };
 
-TectonicPlate::TectonicPlate()
-{
-	density = 0;
-	type = OCEANIC;
-}
-
-TectonicPlate::~TectonicPlate()
-{
-}
 
 #endif // H_TECTONIC_PLATE_H

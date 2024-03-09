@@ -32,13 +32,14 @@ struct WorldConfig
 	bool is_globe;
 
 	/* Tile size in m allows configuring tile size for
-	 * generator 
+	 * generator
 	 */
 	uint32_t tile_size = 1000;
 
 	/* Type of planet that will be generated */
 	WorldPlanetType planet_type;
 
+	uint32_t seed;
 };
 
 
