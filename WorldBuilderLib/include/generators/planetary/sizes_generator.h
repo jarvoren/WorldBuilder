@@ -2,6 +2,7 @@
 #define H_GENEREATOR_FACTORY_H
 
 #include <configs/enums.h>
+#include <random>
 
 /* Future code for future dreams xD */
 struct TectonicPlateCount

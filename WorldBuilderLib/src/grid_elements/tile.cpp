@@ -3,8 +3,8 @@
 /* DEBUG checking the generation transfer to world level */
 Tile::Tile(uint32_t x, uint32_t y, uint32_t seed, Tile*** tileset, uint32_t size_x, uint32_t size_y)
 {
-	pos_x = x;
-	pos_y = y;
+	coordinates.pos_x = x;
+	coordinates.pos_y = y;
 	level = OVERWORLD;
 	srand(seed);
 	int w_chance = rand() % 7;
@@ -55,8 +55,8 @@ Tile::Tile(uint32_t x, uint32_t y, uint32_t seed, Tile*** tileset, uint32_t size
 /* TODO TILE CREATOR - PROBABLY FACTORY THIS IS JUST A SAMPLE */
 Tile::Tile()
 {
-	pos_x = 0;
-	pos_y = 0;
+	coordinates.pos_x = 0;
+	coordinates.pos_y = 0;
 	level = OVERWORLD;
 	type = WATER;
 }
