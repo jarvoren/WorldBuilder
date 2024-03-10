@@ -43,6 +43,8 @@ Tile*** SquareGridGenerator::GenerateBasicTileset(uint32_t x_size, uint32_t y_si
 		for (size_t j = 0; j < y_size; j++)
 		{
 			generated_tileset[i][j] = new Tile();
+			generated_tileset[i][j]->coordinates.pos_x = i;
+			generated_tileset[i][j]->coordinates.pos_y = j;
 		}
 	}
 	return generated_tileset;
@@ -89,8 +91,9 @@ Tile*** SquareGridGenerator::GeneratePlanetsTileset()
 		}
 	}
 
-	struct TectonicPlateCount main_tectonic_plates_count = GetPlanetTectonicPlatesCount(world_cfg_ptr->planet_type);
+	PopulateGridWithTectonicStartPoints(tileset, GetPlanetTectonicPlatesCount(world_cfg_ptr->planet_type));
 
+	ExpandPlatePoints(tileset);
 	/*
 		1) Generate the tectonic plates.
 			*need to design best way to create plates
@@ -99,4 +102,28 @@ Tile*** SquareGridGenerator::GeneratePlanetsTileset()
 		4)Assign Tile heights based on movments of plates
 	 */
 	return NULL;
+}
+
+void SquareGridGenerator::PopulateGridWithTectonicStartPoints(Tile*** tileset, struct TectonicPlateCount plate_counts)
+{
+	/* This is implementation of moddified Poisson Disk distribution */
+	/* Calculate maximum radius for major and minor plates */
+	int max_radius_major = (world_cfg_ptr->grid_x_size + world_cfg_ptr->grid_y_size) / plate_counts.major_plates_count;
+	int max_radius_minor = (world_cfg_ptr->grid_x_size + world_cfg_ptr->grid_y_size) / plate_counts.minor_plates_count;
+
+	for (size_t i = 0; i < plate_counts.major_plates_count; i++)
+	{
+		Point randomised_proposition = 
+		{
+			// Yep thinking how to do it without constraining the x to y grid size.
+			rand() %,
+			rand() %
+
+		}
+	}
+}
+
+void SquareGridGenerator::ExpandPlatePoints(Tile*** tileset)
+{
+
 }

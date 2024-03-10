@@ -19,8 +19,7 @@ public:
 	Tile(uint32_t x, uint32_t y, uint32_t seed, Tile*** tileset, uint32_t size_x, uint32_t size_y);
 	~Tile();
 
-	uint32_t pos_x;
-	uint32_t pos_y;
+	struct Point coordinates;
 
 	TileLevel level;
 	TileType type;

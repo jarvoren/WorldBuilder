@@ -3,6 +3,7 @@
 
 #define _USE_MATH_DEFINES
 #include <cmath>
+#include <utils/calculations.h>
 #include <grid_elements/tile.h>
 #include <configs/configs_agregator.h>
 
