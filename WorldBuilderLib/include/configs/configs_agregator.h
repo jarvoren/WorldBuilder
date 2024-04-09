@@ -6,6 +6,11 @@
 
 /* This file should agregate all config structs that are generic enough */
 
+struct GenerationConfig
+{
+	uint32_t poisson_retry_count;
+
+};
 /* Config used to generate world
  * if possible refrain from using pointers to anything as whole config will be copied
  * use identifiers that will use pointers later
@@ -27,10 +32,11 @@ struct WorldConfig
 	TilesetType tileset_configuration;
 
 	/* Indicates if the generated world should encompass a globe or
-	 * relativley flat surface. (important for generator adjecency )
-	 */
+	* relativley flat surface. (important for generator adjecency )
+	*/
 	bool is_globe;
 
+	GenerationConfig generator_config;
 	/* Tile size in m allows configuring tile size for
 	 * generator
 	 */

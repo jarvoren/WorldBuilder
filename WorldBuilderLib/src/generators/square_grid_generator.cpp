@@ -91,7 +91,7 @@ Tile*** SquareGridGenerator::GeneratePlanetsTileset()
 		}
 	}
 
-	PopulateGridWithTectonicStartPoints(tileset, GetPlanetTectonicPlatesCount(world_cfg_ptr->planet_type));
+	PopulateGridWithTectonicStartPoints(tileset);
 
 	ExpandPlatePoints(tileset);
 	/*
@@ -104,23 +104,41 @@ Tile*** SquareGridGenerator::GeneratePlanetsTileset()
 	return NULL;
 }
 
-void SquareGridGenerator::PopulateGridWithTectonicStartPoints(Tile*** tileset, struct TectonicPlateCount plate_counts)
+void SquareGridGenerator::PopulateGridWithTectonicStartPoints(Tile*** tileset)
 {
+	TectonicPlateCount plate_counts = GetPlanetTectonicPlatesCount(world_cfg_ptr->planet_type);
+	
 	/* This is implementation of moddified Poisson Disk distribution */
 	/* Calculate maximum radius for major and minor plates */
 	int max_radius_major = (world_cfg_ptr->grid_x_size + world_cfg_ptr->grid_y_size) / plate_counts.major_plates_count;
 	int max_radius_minor = (world_cfg_ptr->grid_x_size + world_cfg_ptr->grid_y_size) / plate_counts.minor_plates_count;
+	int min_radius_major = (world_cfg_ptr->grid_x_size + world_cfg_ptr->grid_y_size) / plate_counts.major_plates_count / 3;
+	int min_radius_minor = (world_cfg_ptr->grid_x_size + world_cfg_ptr->grid_y_size) / plate_counts.minor_plates_count / 3;
+
+	std::vector<Point> saved_points;
 
 	for (size_t i = 0; i < plate_counts.major_plates_count; i++)
 	{
-		Point randomised_proposition = 
+		for (size_t i = 0; i < world_cfg_ptr->generator_config.poisson_retry_count; i++)
 		{
-			// Yep thinking how to do it without constraining the x to y grid size.
-			rand() %,
-			rand() %
-
+			Point temp_point;
+			if (saved_points.empty()) 
+			{
+				Point temp_point = GetPoissonPointPositiveOnly({ 0,0 }, max_radius_major, min_radius_major);
+			}
+			else
+			{
+				Point temp_point = GetPoissonPointPositiveOnly(saved_points.back(), max_radius_major, min_radius_major);
+			}
+			if (ValidatePoint(&saved_points, temp_point, world_cfg_ptr->grid_x_size, world_cfg_ptr->grid_y_size,min_radius_major))
+			{
+				saved_points.push_back(temp_point);
+			}
 		}
 	}
+
+	//NEED TO MOVE THIS TO A SEPARATE FUNCTION AND CALL IT FOR MAJOR AND MINOR PLATES
+	//NEXT SETUP SOME KIND OF PRINTING OF THE WORLD SOLUTION
 }
 
 void SquareGridGenerator::ExpandPlatePoints(Tile*** tileset)

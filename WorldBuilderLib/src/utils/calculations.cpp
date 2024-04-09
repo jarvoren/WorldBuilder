@@ -1,5 +1,4 @@
-#include<utils/calculations.h>
-#include <math.h>
+#include <utils\calculations.h>
 
 
 int GetRoundedDistance(Point point_one, Point point_two)
