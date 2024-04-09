@@ -5,8 +5,9 @@
  * if the globe variable is off.
  */
 
-#include <generators/generator.h>
-#include <generators/planetary/sizes_generator.h>
+#include <utils\poisson_calculation.h>
+#include <generators\generator.h>
+#include <generators\planetary\sizes_generator.h>
 
 class SquareGridGenerator : public Generator
 {
@@ -16,8 +17,7 @@ public:
 	Tile*** GenerateTestTileset(uint32_t x_size, uint32_t y_size) override;
 	Tile*** GenerateBasicTileset(uint32_t x_size, uint32_t y_size);
 private:
-	void PopulateGridWithTectonicStartPoints(Tile*** tileset, 
-			struct TectonicPlateCount plate_counts);
+	void PopulateGridWithTectonicStartPoints(Tile*** tileset);
 	void ExpandPlatePoints(Tile*** tileset);
 };
 

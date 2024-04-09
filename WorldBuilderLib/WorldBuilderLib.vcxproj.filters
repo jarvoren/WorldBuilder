@@ -36,7 +36,7 @@
     <ClCompile Include="src\generators\planetary\sizes_generator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\utils\calculations.cpp">
+    <ClCompile Include="src\utils\poisson_calculations.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -71,7 +71,13 @@
     <ClInclude Include="include\generators\planetary\sizes_generator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\utils\poisson_calculation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="include\utils\calculations.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\calculations.cpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
