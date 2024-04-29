@@ -10,9 +10,9 @@ int main()
 	World* myworld = new World();
 	myworld->Generate(new_cfg);
 
-	for (size_t i = 0; i < myworld->world_config.grid_x_size; i++)
+	for (int i = 0; i < myworld->world_config.grid_x_size; i++)
 	{
-		for (size_t j = 0; j < myworld->world_config.grid_y_size; j++)
+		for (int j = 0; j < myworld->world_config.grid_y_size; j++)
 		{
 			switch (myworld->tileset[i][j]->type)
 			{

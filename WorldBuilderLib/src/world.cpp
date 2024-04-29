@@ -4,15 +4,20 @@ void World::DestroyWorld(Tile*** tileset)
 {
 	/* Free the tileset */
 	/* TODO Check if the tiles do not need any pointers freed */
-	for (size_t i = 0; i < world_config.grid_x_size; i++)
+	for (int i = 0; i < world_config.grid_x_size; i++)
 	{
-		for (size_t j = 0; j < world_config.grid_y_size; j++)
+		for (int j = 0; j < world_config.grid_y_size; j++)
 		{
 			delete tileset[i][j];
 		}
 		delete[] tileset[i];
 	}
 	delete[] tileset;
+
+	for (int i = 0; i < tectonic_plates.size(); i++)
+	{
+		delete tectonic_plates[i];
+	}
 }
 
 /* Config will be copied and can be disposed by caller afterwards */
@@ -26,15 +31,21 @@ ErrorCode World::Generate(WorldConfig* cfg)
 	/* Copy the config to the world object */
 	std::memcpy(&world_config, cfg, sizeof(WorldConfig));
 
-	//TODO Generate basic tileset
+	/* Get the world generator from config */
 	Generator* tileset_generator = GeneratorFactory(&world_config);
+
+	/* Share tileset pointer with Generator */
+	tileset_generator->generator_tileset = tileset;
 
 	/* DEBUG to remove afterwards */
 	//tileset = tileset_generator->GenerateTestTileset(world_config.grid_x_size, world_config.grid_y_size);
 
-	//TODO Populate the tileset with proper tiles - terrain only generation
 	tileset = tileset_generator->GeneratePlanetsTileset();
 
+	/* Get tectonic plates data for future use */
+	tectonic_plates = tileset_generator->GetTectonicPlates();
+
+	//TODO Populate the tileset with proper tiles - terrain only generation
 	//TODO Generate populace, main characters and factions		**together** ??
 	//															**together** ??
 	//TODO Populate the tiles with places (start of history)	**together** ??

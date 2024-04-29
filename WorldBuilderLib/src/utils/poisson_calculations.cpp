@@ -25,7 +25,7 @@ ErrorCode ValidatePoint(std::vector<Point>* saved_points, Point point_to_validat
 	if (point_to_validate.pos_x > max_x || point_to_validate.pos_y > max_y)
 		return ERR_POINT_OUTSIDE_OF_MAXIMUM_RANGE;
 
-	for (size_t i = 0; i < saved_points->size(); i++)
+	for (int i = 0; i < saved_points->size(); i++)
 	{
 		if (GetRoundedDistance(saved_points->at(i), point_to_validate) < min_distance)
 		{
