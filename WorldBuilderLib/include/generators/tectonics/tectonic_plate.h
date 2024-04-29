@@ -24,6 +24,8 @@ public:
 	uint32_t density;
 	/* Maximum amout of tiles */
 	uint8_t max_size;
+	/* Is plate major - needed for generation purposes */
+	bool is_major;
 };
 
 

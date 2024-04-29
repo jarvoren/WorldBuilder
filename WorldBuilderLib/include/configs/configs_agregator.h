@@ -9,7 +9,6 @@
 struct GenerationConfig
 {
 	uint32_t poisson_retry_count;
-
 };
 /* Config used to generate world
  * if possible refrain from using pointers to anything as whole config will be copied

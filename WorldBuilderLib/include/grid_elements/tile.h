@@ -10,6 +10,7 @@
 #include <cstdlib>
 #include <configs/enums.h>
 #include <map>
+#include <utils/calculations.h>
 #include <generators/tectonics/tectonic_plate.h>
 
 class Tile
@@ -19,7 +20,7 @@ public:
 	Tile(uint32_t x, uint32_t y, uint32_t seed, Tile*** tileset, uint32_t size_x, uint32_t size_y);
 	~Tile();
 
-	struct Point coordinates;
+	Point coordinates;
 
 	TileLevel level;
 	TileType type;

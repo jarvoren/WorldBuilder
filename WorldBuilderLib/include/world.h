@@ -1,6 +1,7 @@
 #ifndef H_WORLD_H
 #define H_WORLD_H
 
+#include <vector>
 #include <cstring>
 #include <grid_elements/tile.h>
 #include <factories/generator_factory.h>
@@ -22,6 +23,8 @@ public:
 	 * allocated by the generator
 	 */
 	Tile*** tileset;
+
+	std::vector<TectonicPlate*> tectonic_plates;
 
 	/* Gravity mulltiplier relative to earth gravity */
 	int gravity;
