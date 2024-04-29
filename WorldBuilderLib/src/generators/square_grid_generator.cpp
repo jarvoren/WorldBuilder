@@ -114,6 +114,8 @@ void SquareGridGenerator::PopulateGridWithTectonicStartPoints(Tile*** tileset)
 	int max_radius_minor = (world_cfg_ptr->grid_x_size + world_cfg_ptr->grid_y_size) / plate_counts.minor_plates_count;
 	int min_radius_major = (world_cfg_ptr->grid_x_size + world_cfg_ptr->grid_y_size) / plate_counts.major_plates_count / 3;
 	int min_radius_minor = (world_cfg_ptr->grid_x_size + world_cfg_ptr->grid_y_size) / plate_counts.minor_plates_count / 3;
+	//TODO FOKIN MAGIC NUMBERS M8
+
 
 	std::vector<Point> saved_points;
 
