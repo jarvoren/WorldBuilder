@@ -20,9 +20,9 @@ public:
 	Tile*** GenerateBasicTileset(uint32_t x_size, uint32_t y_size);
 	std::vector<TectonicPlate*> GetTectonicPlates();
 private:
-	void GenerateAndSaveNewTectonicPlates(std::vector<Point> saved_points, Tile*** tileset, bool is_major);
-	void PopulateGridWithTectonicStartPoints(Tile*** tileset);
-	void ExpandPlatePoints(Tile*** tileset);
+	void GenerateAndSaveNewTectonicPlates(std::vector<Point> saved_points, bool is_major);
+	void PopulateGridWithTectonicStartPoints();
+	void ExpandPlatePoints();
 	std::vector<Point> GetPlateCoordinates(int plate_count, int max_radius, int min_radius);
 };
 
