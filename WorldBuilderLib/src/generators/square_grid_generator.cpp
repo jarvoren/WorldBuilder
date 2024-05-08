@@ -96,9 +96,9 @@ Tile*** SquareGridGenerator::GeneratePlanetsTileset()
 		}
 	}
 
-	PopulateGridWithTectonicStartPoints(tileset);
+	PopulateGridWithTectonicStartPoints();
 
-	ExpandPlatePoints(tileset);
+	ExpandPlatePoints();
 	/*
 		1) Generate the tectonic plates.
 			*need to design best way to create plates
@@ -109,7 +109,7 @@ Tile*** SquareGridGenerator::GeneratePlanetsTileset()
 	return NULL;
 }
 
-void SquareGridGenerator::GenerateAndSaveNewTectonicPlates(std::vector<Point> saved_points, Tile *** tileset, bool is_major)
+void SquareGridGenerator::GenerateAndSaveNewTectonicPlates(std::vector<Point> saved_points, bool is_major)
 {
 	for (int i = 0; i < saved_points.size(); i++)
 	{
@@ -118,18 +118,18 @@ void SquareGridGenerator::GenerateAndSaveNewTectonicPlates(std::vector<Point> sa
 		/* In the event of plate already being asigned to this tile (only when minor overwrites major)
 		 * we take tile to the right if possible if not we assign plate to left one
 		 */
-		if(tileset[saved_points[i].pos_x][saved_points[i].pos_y]->plate)
+		if(generator_tileset[saved_points[i].pos_x][saved_points[i].pos_y]->plate)
 			if (world_cfg_ptr->grid_x_size = saved_points[i].pos_x)
-				tileset[saved_points[i].pos_x-1][saved_points[i].pos_y]->plate = new_plate;
+				generator_tileset[saved_points[i].pos_x-1][saved_points[i].pos_y]->plate = new_plate;
 			else
-				tileset[saved_points[i].pos_x + 1][saved_points[i].pos_y]->plate = new_plate;
+				generator_tileset[saved_points[i].pos_x + 1][saved_points[i].pos_y]->plate = new_plate;
 		else
-			tileset[saved_points[i].pos_x][saved_points[i].pos_y]->plate = new_plate;
+			generator_tileset[saved_points[i].pos_x][saved_points[i].pos_y]->plate = new_plate;
 		created_plates.push_back(new_plate);
 	}
 }
 
-void SquareGridGenerator::PopulateGridWithTectonicStartPoints(Tile*** tileset)
+void SquareGridGenerator::PopulateGridWithTectonicStartPoints()
 {
 	TectonicPlateCount plate_counts = GetPlanetTectonicPlatesCount(world_cfg_ptr->planet_type);
 	
@@ -144,12 +144,12 @@ void SquareGridGenerator::PopulateGridWithTectonicStartPoints(Tile*** tileset)
 	std::vector<Point> saved_points = GetPlateCoordinates(plate_counts.major_plates_count, max_radius_major, min_radius_major);
 
 	/* Save the coordinates and create the major plate objects assigned to a starting point */
-	GenerateAndSaveNewTectonicPlates(saved_points, tileset, true);
+	GenerateAndSaveNewTectonicPlates(saved_points, true);
 
 	/* Do the same for minor plates */
 	saved_points = GetPlateCoordinates(plate_counts.minor_plates_count, max_radius_minor, min_radius_minor);
 
-	GenerateAndSaveNewTectonicPlates(saved_points, tileset, false);
+	GenerateAndSaveNewTectonicPlates(saved_points, false);
 
 	//NEXT SETUP SOME KIND OF PRINTING OF THE WORLD SOLUTION
 	//REFACTOR TO HAVE TILESET AS A PART OF GENERATOR AND RETURN IN THE END ?
@@ -182,7 +182,7 @@ std::vector<Point> SquareGridGenerator::GetPlateCoordinates(int plate_count, int
 	return saved_points;
 }
 
-void SquareGridGenerator::ExpandPlatePoints(Tile*** tileset)
+void SquareGridGenerator::ExpandPlatePoints()
 {
 
 }
