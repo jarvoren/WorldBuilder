@@ -1,21 +1,17 @@
 #include <main.h>
 
-int main()
-{
-	WorldConfig* new_cfg = new WorldConfig();
+int main() {
+	WorldConfig *new_cfg = new WorldConfig();
 	new_cfg->grid_x_size = 60;
 	new_cfg->grid_y_size = 60;
 	new_cfg->tileset_configuration = SQUARE;
 
-	World* myworld = new World();
+	World *myworld = new World();
 	myworld->Generate(new_cfg);
 
-	for (int i = 0; i < myworld->world_config.grid_x_size; i++)
-	{
-		for (int j = 0; j < myworld->world_config.grid_y_size; j++)
-		{
-			switch (myworld->tileset[i][j]->type)
-			{
+	for (int i = 0; i < myworld->world_config.grid_x_size; i++) {
+		for (int j = 0; j < myworld->world_config.grid_y_size; j++) {
+			switch (myworld->tileset[i][j]->type) {
 			case WATER:
 				printf("~");
 				break;
@@ -28,8 +24,9 @@ int main()
 			default:
 				break;
 			}
-			
-			if (j + 1 == myworld->world_config.grid_y_size) printf("\n");
+
+			if (j + 1 == myworld->world_config.grid_y_size)
+				printf("\n");
 		}
 	}
 

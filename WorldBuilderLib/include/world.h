@@ -1,19 +1,18 @@
 #ifndef H_WORLD_H
 #define H_WORLD_H
 
-#include <vector>
-#include <cstring>
-#include <grid_elements/tile.h>
-#include <factories/generator_factory.h>
 #include <configs/configs_agregator.h>
+#include <cstring>
+#include <factories/generator_factory.h>
+#include <grid_elements/tile.h>
+#include <vector>
 
-class World
-{
-public:
+class World {
+  public:
 	World();
-	ErrorCode Generate(WorldConfig* cfg);
+	ErrorCode Generate(WorldConfig *cfg);
 	~World();
-	void DestroyWorld(Tile*** tileset);
+	void DestroyWorld(Tile ***tileset);
 
 	WorldPlanetType planet_type;
 
@@ -22,9 +21,9 @@ public:
 	/* De facto map saved in 2d array
 	 * allocated by the generator
 	 */
-	Tile*** tileset;
+	Tile ***tileset;
 
-	std::vector<TectonicPlate*> tectonic_plates;
+	std::vector<TectonicPlate *> tectonic_plates;
 
 	/* Gravity mulltiplier relative to earth gravity */
 	int gravity;
@@ -33,6 +32,6 @@ public:
 	uint32_t globe_circumference;
 };
 
-bool IsValidConfig(WorldConfig* cfg);
+bool IsValidConfig(WorldConfig *cfg);
 
 #endif // H_WORLD_H

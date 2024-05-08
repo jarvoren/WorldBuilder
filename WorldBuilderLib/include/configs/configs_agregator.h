@@ -6,8 +6,7 @@
 
 /* This file should agregate all config structs that are generic enough */
 
-struct GenerationConfig
-{
+struct GenerationConfig {
 	uint32_t poisson_retry_count;
 };
 /* Config used to generate world
@@ -18,8 +17,7 @@ struct GenerationConfig
  * class with destructor to handle it or You need to be smart about how to handle it ;)
  * TO REMEMBER/TO DO
  */
-struct WorldConfig
-{
+struct WorldConfig {
 	/* Only values divisible by 2 for these sizes in valid config */
 
 	/* Horizontal squares count */
@@ -31,8 +29,8 @@ struct WorldConfig
 	TilesetType tileset_configuration;
 
 	/* Indicates if the generated world should encompass a globe or
-	* relativley flat surface. (important for generator adjecency )
-	*/
+	 * relativley flat surface. (important for generator adjecency )
+	 */
 	bool is_globe;
 
 	GenerationConfig generator_config;
@@ -46,6 +44,5 @@ struct WorldConfig
 
 	uint32_t seed;
 };
-
 
 #endif // H_CONFIGS_AGREGATOR_H

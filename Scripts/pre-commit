@@ -1,0 +1,17 @@
+#!/bin/sh
+  
+#set -e exec
+#exec git diff --cached | ../../Scripts/checkpatch.pl --no-tree --codespell
+
+# Redirect output to stderr.
+exec 1>&2
+# Check if there are any files added to the commit.
+if test $(git diff --cached --name-only | wc -c) != 0
+then
+    # Run clang-format on the staged files.
+    git diff --cached --name-only | xargs clang-format -i -style=file
+    # Inform the user and exit.
+    echo "Code formatting changed some files, please review and re-add files with git add"
+    exit 1
+fi
+

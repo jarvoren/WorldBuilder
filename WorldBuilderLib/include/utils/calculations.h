@@ -4,8 +4,7 @@
 #include <cmath>
 #include <cstdint>
 
-struct Point
-{
+struct Point {
 	int pos_x;
 	int pos_y;
 };
