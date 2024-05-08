@@ -5,8 +5,7 @@
 #include <random>
 
 /* Future code for future dreams xD */
-struct TectonicPlateCount
-{
+struct TectonicPlateCount {
 	int major_plates_count;
 	int minor_plates_count;
 };

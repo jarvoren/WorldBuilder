@@ -1,19 +1,13 @@
 #ifndef H_TECTONIC_PLATE_H
 #define H_TECTONIC_PLATE_H
 
-#include <cstdint>
 #include <configs/enums.h>
+#include <cstdint>
 
-enum TectonicPlateType
-{
-	OCEANIC,
-	CONTINENTAL
-};
+enum TectonicPlateType { OCEANIC, CONTINENTAL };
 
-
-class TectonicPlate
-{
-public:
+class TectonicPlate {
+  public:
 	TectonicPlate();
 	~TectonicPlate();
 
@@ -27,6 +21,5 @@ public:
 	/* Is plate major - needed for generation purposes */
 	bool is_major;
 };
-
 
 #endif // H_TECTONIC_PLATE_H

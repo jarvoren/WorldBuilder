@@ -1,12 +1,10 @@
 #include <generators/planetary/sizes_generator.h>
 
 /* Get planet radius size in meters */
-int GetPlanetRadius(WorldPlanetType planet_type)
-{
+int GetPlanetRadius(WorldPlanetType planet_type) {
 	int planet_size = 0;
 
-	switch (planet_type)
-	{
+	switch (planet_type) {
 	case CARBON:
 		break;
 	case CORELESS:
@@ -28,7 +26,7 @@ int GetPlanetRadius(WorldPlanetType planet_type)
 	case OCEAN:
 		break;
 	case EARTH:
-		planet_size = 6371000; //google earth data
+		planet_size = 6371000; // google earth data
 		break;
 	case ISLAND:
 		break;
@@ -38,13 +36,11 @@ int GetPlanetRadius(WorldPlanetType planet_type)
 	return planet_size;
 }
 
-struct TectonicPlateCount GetPlanetTectonicPlatesCount(WorldPlanetType planet_type)
-{
+struct TectonicPlateCount GetPlanetTectonicPlatesCount(WorldPlanetType planet_type) {
 
-	struct TectonicPlateCount tectonic_plates_count = { 0 };
+	struct TectonicPlateCount tectonic_plates_count = {0};
 
-	switch (planet_type)
-	{
+	switch (planet_type) {
 	case CARBON:
 		break;
 	case CORELESS:
