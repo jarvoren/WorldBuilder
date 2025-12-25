@@ -1,0 +1,2 @@
+/usr/bin/ar qc libWorldBuilder.a CMakeFiles/WorldBuilder.dir/src/WorldBuilder.cpp.o
+/usr/bin/ranlib libWorldBuilder.a

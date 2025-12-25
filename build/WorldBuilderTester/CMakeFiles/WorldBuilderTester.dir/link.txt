@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/WorldBuilderTester.dir/src/main.cpp.o -o WorldBuilderTester  ../WorldBuilder/libWorldBuilder.a 
