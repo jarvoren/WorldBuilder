@@ -1,5 +1,5 @@
 add_library(WorldBuilder 
-    src/WorldBuilder.cpp
+    src/core/WorldBuilder.cpp
 )
 
 target_include_directories(WorldBuilder PUBLIC 
