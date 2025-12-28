@@ -2,8 +2,8 @@
 #define TILE_H
 
 #include <cstdint>
-#include <vector>
 #include <descriptors/enums.h>
+#include <vector>
 
 struct BaseInfo {
 	uint64_t x;
@@ -17,5 +17,6 @@ struct GroundInformation {
 
 struct Tile {
 	BaseInfo base;
+	GroundInformation ground_info;
 };
 #endif // TILE_H

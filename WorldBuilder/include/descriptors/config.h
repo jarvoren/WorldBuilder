@@ -3,7 +3,7 @@
 
 #include <cstdint>
 
-class ConfigData {
+struct ConfigData {
 	uint32_t size_x;
 	uint32_t size_y;
 };
