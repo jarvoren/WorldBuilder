@@ -1,8 +1,10 @@
 #ifndef WORLD_BUILDER_H
 #define WORLD_BUILDER_H
 
-#include <descriptors/Tile.h>
+#include "descriptors/enums.h"
+#include "passgenerators/passtranslator.h"
 #include <descriptors/config.h>
+#include <descriptors/tile.h>
 #include <memory>
 #include <random>
 
@@ -15,11 +17,14 @@ class WorldBuilder {
 	// Rule of 5
 	WorldBuilder();
 	~WorldBuilder();
-	WorldBuilder(const WorldBuilder &other) = delete;
-	WorldBuilder &operator=(const WorldBuilder &other) = delete;
-	WorldBuilder(WorldBuilder &&other) noexcept = delete;
+	WorldBuilder(const WorldBuilder &other)				   = delete;
+	WorldBuilder &operator=(const WorldBuilder &other)	   = delete;
+	WorldBuilder(WorldBuilder &&other) noexcept			   = delete;
 	WorldBuilder &operator=(WorldBuilder &&other) noexcept = delete;
 
+	ErrorCode Generate();
+	ErrorCode Save();
+	void Test();
 	ErrorCode configure(const ConfigData &confData);
 	const std::vector<std::vector<std::unique_ptr<Tile>>> &GetTileset();
 };

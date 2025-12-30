@@ -11,6 +11,16 @@ enum class GroundTag {
 
 };
 
+enum class GeneratorPass {
+	PoissonPlateStartersPopulation,
+};
+
+enum class PlateDensity {
+	High,
+	Normal,
+	Low,
+};
+
 enum class ErrorCode {
 	Succes = 0,
 	GeneralFailure,

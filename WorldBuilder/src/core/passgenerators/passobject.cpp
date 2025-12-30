@@ -1,0 +1,1 @@
+#include "passgenerators/passobject.h"
