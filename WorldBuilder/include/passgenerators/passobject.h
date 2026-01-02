@@ -9,7 +9,7 @@ class PassObject
 {
   public:
 	virtual ~PassObject() = default;
-	virtual void Configure(ConfigData configuration) = 0;
+	virtual void Configure(ConfigData &configuration) = 0;
 	virtual void RunPass(std::vector<std::vector<std::unique_ptr<Tile>>> &tileset) = 0;
 };
 

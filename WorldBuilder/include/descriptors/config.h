@@ -5,9 +5,13 @@
 #include <cstdint>
 #include <vector>
 
-struct ConfigData {
+struct ConfigData
+{
 	uint32_t size_x;
 	uint32_t size_y;
+
+	uint8_t major_plate_count;
+	uint8_t minor_plate_count;
 
 	std::vector<GeneratorPass> orderedPases;
 };
