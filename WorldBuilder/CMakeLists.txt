@@ -3,6 +3,9 @@ add_library(WorldBuilder
     src/core/passgenerators/passobject.cpp
     src/core/passgenerators/poissonplate.cpp
     src/core/passgenerators/passtranslator.cpp
+    src/utilities/rng.cpp
+    src/utilities/error_utilities.cpp
+
 )
 
 target_include_directories(WorldBuilder PUBLIC 
